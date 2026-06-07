@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "http://localhost/sdc342l_project",
+      "url": "http://localhost:8888/sdc342l_project/login.php",
       "webRoot": "${workspaceFolder}"
     }
   ]
