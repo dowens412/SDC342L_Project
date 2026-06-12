@@ -17,6 +17,11 @@ $complaints = $complaintModel->getComplaintsByCustomerId($_SESSION["user_id"]);
 
 <p>This page is protected. Only logged-in customers can view it.</p>
 
+<p>
+    <a href="create_complaint.php">Create New Complaint</a> |
+    <a href="logout.php">Logout</a>
+</p>
+
 <h3>My Complaints</h3>
 
 <table>
@@ -26,6 +31,8 @@ $complaints = $complaintModel->getComplaintsByCustomerId($_SESSION["user_id"]);
         <th>Type</th>
         <th>Status</th>
         <th>Technician</th>
+        <th>Resolution Notes</th>
+        <th>Image</th>
     </tr>
 
     <?php foreach ($complaints as $complaint) : ?>
@@ -43,10 +50,22 @@ $complaints = $complaintModel->getComplaintsByCustomerId($_SESSION["user_id"]);
                     }
                 ?>
             </td>
+            <td>
+                <?php
+                    echo !empty($complaint["resolution_notes"])
+                        ? htmlspecialchars($complaint["resolution_notes"])
+                        : "No resolution notes yet.";
+                ?>
+            </td>
+            <td>
+                <?php if (!empty($complaint["image_path"])) : ?>
+                    <a href="<?php echo htmlspecialchars($complaint["image_path"]); ?>" target="_blank">View Image</a>
+                <?php else : ?>
+                    No image
+                <?php endif; ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
-
-<p><a href="logout.php">Logout</a></p>
 
 <?php include "includes/footer.php"; ?>

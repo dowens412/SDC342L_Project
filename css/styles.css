@@ -62,3 +62,40 @@ footer {
   color: red;
   font-weight: bold;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 700px;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  max-width: 220px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}

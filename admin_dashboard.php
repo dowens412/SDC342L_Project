@@ -26,6 +26,11 @@ $technicianCounts = $complaintModel->getTechnicianOpenComplaintCounts();
 
 <p>This page is protected. Only logged-in administrators can view it.</p>
 
+<p>
+    <a href="assign_complaint.php">Assign Complaints</a> |
+    <a href="logout.php">Logout</a>
+</p>
+
 <section class="card-container">
     <div class="card">
         <h3>Customers</h3>
@@ -97,7 +102,5 @@ $technicianCounts = $complaintModel->getTechnicianOpenComplaintCounts();
         </tr>
     <?php endforeach; ?>
 </table>
-
-<p><a href="logout.php">Logout</a></p>
 
 <?php include "includes/footer.php"; ?>

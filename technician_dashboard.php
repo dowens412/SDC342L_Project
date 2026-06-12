@@ -17,6 +17,8 @@ $complaints = $complaintModel->getComplaintsByTechnicianId($_SESSION["user_id"])
 
 <p>This page is protected. Only logged-in technicians can view it.</p>
 
+<p><a href="logout.php">Logout</a></p>
+
 <h3>Assigned Complaints</h3>
 
 <table>
@@ -27,6 +29,7 @@ $complaints = $complaintModel->getComplaintsByTechnicianId($_SESSION["user_id"])
         <th>Type</th>
         <th>Status</th>
         <th>Date Created</th>
+        <th>Action</th>
     </tr>
 
     <?php foreach ($complaints as $complaint) : ?>
@@ -37,10 +40,13 @@ $complaints = $complaintModel->getComplaintsByTechnicianId($_SESSION["user_id"])
             <td><?php echo htmlspecialchars($complaint["complaint_type_name"]); ?></td>
             <td><?php echo htmlspecialchars($complaint["complaint_status"]); ?></td>
             <td><?php echo htmlspecialchars($complaint["created_at"]); ?></td>
+            <td>
+                <a href="technician_update_complaint.php?id=<?php echo htmlspecialchars($complaint["complaint_id"]); ?>">
+                    Update
+                </a>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
-
-<p><a href="logout.php">Logout</a></p>
 
 <?php include "includes/footer.php"; ?>
