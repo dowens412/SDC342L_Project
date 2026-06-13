@@ -198,8 +198,7 @@ Password: Password123!
 A screen recording demonstration of the project is available here:
 
 ```text
-Add YouTube link here
-```
+YouTube link https://www.youtube.com/watch?v=hvFN3FdH8G8)```
 
 ## Link to Project
 
